@@ -1,0 +1,825 @@
+<!DOCTYPE html >
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="stylesheet" href="styles.css">
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <!-- <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -->
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    
+    <!-- <link rel="manifest" href="manifest.json"> -->
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+
+    </script>
+    <script>
+        (function() {
+            emailjs.init("ONr2i-L-FesPxwJx1"); // Replace with your EmailJS Public Key
+        })();
+    </script>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+   
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <title>React App</title>
+  </head>
+  <body>
+    
+
+    <div id="root"></div>
+    <!-- ===============================================NAVBAR ================================================ -->
+    <div class="navbar-div">
+      <!-- Mobile Toggle Button -->
+      <div class="mobile-navbar-btn">
+        <button style="background-color: #a49260; border: none;color: #f0e3e3; padding-right: 10px;" onclick="toggleSidebar()"><i class="fa fa-bars" style=" padding: 10px; padding-left:10px; padding-right: 10px;"></i>   <span>KANKARWA HAVELI</span>  </button>     
+      </div>
+      
+      <!-- ============================================ Sidebar================================================== -->
+      <div id="sidebar" class="sidebar">
+          <ul class="navbar-ul">
+              <li class="navbar-item">
+                  <a href="#home" class="NavLink" onclick="toggleSidebar()">
+                      <i class="fas fa-home menu-icon"></i>
+                      <span class="menu-text">HOME</span>
+                  </a>
+              </li>
+              <li class="navbar-item">
+                <a href="#Accommodations " class="NavLink" onclick="toggleSidebar()">
+                  <i class="fas fa-hotel menu-icon"></i>
+
+                    <span class="menu-text">ACCOMMODATIONS</span>
+                </a>
+            </li>
+            <li class="navbar-item">
+              <a href="#Dining & Drinks" class="NavLink" onclick="toggleSidebar()">
+                
+                <i class="fas fa-coffee  menu-icon"></i>
+                  <span class="menu-text">DINING & DRINKS</span>
+              </a>
+          </li>
+              <li class="navbar-item">
+                  <a href="#history" class="NavLink" onclick="toggleSidebar()">
+                      <i class="fas fa-book-open menu-icon"></i>
+                      <span class="menu-text">HISTORY OF KANKARWA HAVELI</span>
+                  </a>
+              </li>
+              <li class="navbar-item">
+                <a href="#facility" class="NavLink" onclick="toggleSidebar()">
+                  <i class="fas fa-hamburger menu-icon"></i>
+                    <span class="menu-text">FACILITY & FOOD</span>
+                </a>
+            </li>
+            
+          <li class="navbar-item">
+            <a href="#travel" class="NavLink" onclick="toggleSidebar()">
+                <i class="fas fa-book-open menu-icon"></i>
+                <span class="menu-text">TRAVEL DESK</span>
+            </a>
+        </li>
+              <li class="navbar-item">
+                  <a href="#term" class="NavLink" onclick="toggleSidebar()">
+                      <i class="fas fa-snowflake menu-icon"></i>
+                      <span class="menu-text">TERMS AND CONDITIONS</span>
+                  </a>
+              </li>
+              
+              <li class="navbar-item">
+                  <a href="#location" class="NavLink" onclick="toggleSidebar()">
+                      <i class="fas fa-map-marker-alt menu-icon"></i>
+                      <span class="menu-text">LOCATION</span>
+                  </a>
+              </li>
+              <li class="navbar-item">
+                <a href="#ATTRACTION" class="NavLink" onclick="toggleSidebar()">
+                  <i class="fas fa-circle-notch menu-icon"></i>
+                    <span class="menu-text">ATTRACTION</span>
+                </a>
+            </li>
+              <li class="navbar-item">
+                  <a href="#form" class="NavLink" onclick="toggleSidebar()">
+                      <i class="fas fa-user-alt menu-icon"></i>
+                      <span class="menu-text">RESERVATION</span>
+                  </a>
+              </li>
+              <li class="navbar-item" style="position: fixed; bottom: 10px;">
+                <a href="#home" class="NavLink" onclick="toggleSidebar()">
+                
+                    <span class="menu-text" ><b>A Heritage Hotel on Lake Pichola</b></span>
+                </a>
+            </li>
+          </ul>
+      </div></div>
+
+      <div id="home" class="main-content">
+      <!-- =============================================carousel div============================================ -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicators/dots -->
+      <!-- 
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      </div> 
+      -->
+    
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner" data-bs-interval="300">
+        <div class="carousel-item active">
+          <img src="./image/kankarwa4.jpg" alt="Los Angeles" class="d-block" style="width:100%; height:500px;"/>
+          <div class="carousel-caption" style="margin-bottom:200px;margin-top:40px;">
+            <h1>Experience the beauty of heritage with us.</h1>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="300">
+          <img src="./image/kankarwa2.jpg" alt="Chicago" class="d-block" style="width:100%; height:500px;"/>
+          <div class="carousel-caption" style="margin-bottom:200px;  margin-top:40px;">
+            <h1>Experience the beauty of heritage with us.</h1>
+          </div> 
+        </div>
+        <div class="carousel-item" data-bs-interval="300">
+          <img src="./image/kankarwa5.jpg" alt="Chicago" class="d-block" style="width:100%; height:500px;"/>
+          <div class="carousel-caption" style="margin-bottom:200px; margin-top:40px;">
+            <h1>Experience the beauty of heritage with us.</h1>
+          </div> 
+        </div>
+      </div>
+   
+    
+      <!-- Left and right controls/icons -->
+      <div style="margin-top:100px;">
+        <button class="carousel-control-prev" style="margin-top:250px;" type="button" data-bs-target="#demo" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" style="margin-top:250px;" type="button" data-bs-target="#demo" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+    
+     <!-- ========================= whatsapp plug in ================================================================================== -->
+    
+    <div style="position: fixed; z-index: 999; bottom: 20px; left: 20px;">
+      <a href="https://wa.me/9929199929" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp" 
+             style="color: green; font-size: 60px; background: white; 
+                    padding: 5px; border-radius: 50px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);">
+          </i>
+      </a>
+  </div>
+  
+    <!-- =================================================== welcome=========================================== -->
+<div class="container-fluid mt-3">
+      <h1 style="display:flex; align-items:center; justify-content:center; text-align:center; color:#c8b98f; margin-bottom:30px;">
+       <b> Welcome to Kankarwa Haveli</b>
+
+      </h1>
+      <div class="row">
+        <div class="col-md-5">
+          <div style=" margin-left:5%; margin-bottom:30px; padding: 40px;">
+            <h5 class="d-flex justify-content-center align-items-center text-center" style="display:flex; align-items:center; justify-content:center; text-align:center; color:#c8b98f;padding: 30px;">
+              Kankarwa haveli is an old mansion which has been in the Kankarwa family for 180 years.
+              It was the urban house for a Kankarwa family.
+              In 1993 the family began renovation work and within two years Kankarwa haveli opened with all modern facilities for guests.
+            </h5>
+            <img src="image/room8.jpg" alt="New York" class="d-block " style="width:100%; height:300px; margin-top:40px;  border: 5px outset #c8b98f;" />
+          </div>
+        </div>
+        <div class="col-md-7" style="display:flex; align-items:center; justify-content:center; text-align:center; padding: auto;">
+          <div>
+            <p><strong>
+              Kankarwa haveli is now one of the Heritage Hotels in Udaipur, managed and run by the original family. When you enter this beautiful haveli, 
+              you realize immediately that you have found the perfect haven to restore your travel-weary spirit. Soft cream-colored walls are accentuated by jewel tones of blooming bougainvillea.
+              Greenery is displayed in the lovely courtyard and on all levels of the haveli.<br>
+              You will be met in the reception area by Janardan Singh, who is a wealth of information. Ask him anything regarding where to go and how to get there. He knows everyone, and his advice is invaluable.
+              You will enjoy his winning smile and scintillating wit. Barfi, the family Alsatian, will also greet you warmly and happily. The family and staff are committed to serving you and making your stay comfortable, enjoyable, and memorable.
+            </strong></p>
+            <img src="./image/kankarwa4.jpg" alt="New York" class="d-block" style="width:100%; height:300px; border: 5px outset #c8b98f; padding: auto; " />
+          </div>
+        </div>
+      </div>
+
+    
+   <!-- ===================================== Accommodations Section ======================== -->
+   <div id="Accommodations" style="display: flex; align-items: center; justify-content: center; text-align: center; margin-top: 60px; margin-bottom: 60px;">
+    <div style="width: 95%; border: 5px outset #c8b98f; padding: 30px; box-shadow: 10px 10px 10px 10px #c8b98f;">
+      <h2 style="color: #c8b98f; font-size: 28px;"><b>ACCOMMODATIONS</b></h2>
+     <strong> <p>Great thought was given to the renovation of this haveli and careful attention was given to every detail to preserve the simple, yet elegant style of traditional Rajasthan. There are a total of 16 rooms in Kankarwa Haveli
+        <br></br>Deluxe suites and rooms command full view of the lake, whereas standard rooms have a partial view. Every room is fitted with world class O General Air Conditioners and has ensuite bathroom with hot water available 24 hours a day.
+         Some bathrooms are equipped with tubs as well as showers and all have western style toilets.
+         You will be delightfully surprised by whichever room you choose, for each is unique.<br></br>Every year the management thoughtfully adds colorful, singular attributes to the rooms to make them more inviting. From the towels and bedding,
+          to the glass chandeliers called ‘handis’ to the hand-worked curtains and colorful pillows,
+          to the wall paintings every single item is particularly chosen for each room. Kankarwa Haveli maintains its old world charm and resembles a home rather than a hotel.
+           There are no telephones or television sets in the rooms to upset the tranquility and serenity of this beautiful haveli. You cannot help but fall in love and want to stay forever.
+      </p>  </strong>
+    </div>
+  </div>
+    <!-- ======================================== Dining Section ============================ -->
+  <div class="container-fluid mt-3" id="Dining & Drinks" style="display: flex; align-items: center; justify-content: center; text-align: center; margin-top: 60px; margin-bottom: 60px;">
+    <div class="row">
+      <h2 style="padding: 23px; color: #c8b98f; width: 100%;"><b>Dining & Drinks: Restaurants and rooftop </b> </h2>
+  
+      <div class="col-md-4">
+        <div class="image-container">
+          <img src="./image/kankarwa4.jpg" alt="Avatar" class="image" style="height: 300px; width: 100%; border: 5px outset #c8b98f;" />
+          <div class="overlay">
+            <div class="text">
+              <button class="btn" style="background: #B8A980; border: 1px solid black;"><a href="#form"  class="NavLink">BOOK NOW </a> </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="image-container">
+          <img src="./image/kankarwa2.jpg" alt="Avatar" class="image" style="height: 300px; width: 100%;border: 5px outset #b69f60; " />
+          <div class="overlay">
+            <div class="text">
+              <button class="btn" style="background: #b6a67b; border: 1px solid black; "><a  href="#form"  class="NavLink">BOOK NOW </a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-md-4">
+        <div class="image-container">
+          <img src="./image/room8.jpg" alt="Avatar" class="image" style="height: 300px; width: 100%; border: 5px outset #b7a268;" />
+          <div class="overlay">
+            <div class="text">
+              <button class="btn" style="background: #B8A980; border: 1px solid black; "><a href="#form"  class="NavLink">BOOK NOW </a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- ===================== Image Change Section on Click  =============================-->
+  <div class="container-fluid"  style="margin-bottom: 60px; padding: auto;">
+    <div class="row">
+       
+
+        <!-- Room or View Selection Section -->
+        <div class="room-details col-md-6">
+            <div style="border: 5px outset rgb(191, 160, 73); padding: 20px; box-shadow: 4px 4px 4px 4px #c8b98f;">
+                <div style="margin-bottom: 30px; padding: 10px;">
+                    <ul>
+                        <span>
+                            <p style="cursor: pointer; font-size: 20px;" onclick="selectOption('grandView')">Grand View Of Kankarwa Haveli</p>
+                            <!-- <span style="font-size: 35px;">/</span> -->
+                            <p style="cursor: pointer; font-size: 20px;" onclick="selectOption('roomSelection')">ROOM</p>
+                        </span>
+                    </ul>
+                </div>
+
+                <div id="grandViewOptions" style="display: none;">
+                    <h3>Grand View Options</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item" style="cursor: pointer;" onclick="changeImage('./image/kankarwa2.jpg')">GRAND VIEW 1</li>
+                        <li class="list-group-item" style="cursor: pointer;" onclick="changeImage('./image/kankarwa4.jpg')">GRAND VIEW 2</li>
+                        <li class="list-group-item" style="cursor: pointer;" onclick="changeImage('./image/kankarwa5.jpg')">GRAND VIEW 3</li>
+                    </ul>
+                </div>
+
+                <div id="roomOptions" style="display: none;">
+                    <h3>Room Options</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item" style="cursor: pointer;" onclick="changeImage('./image/room5.jpg')">MASTER ROOM</li>
+                        <li class="list-group-item" style="cursor: pointer;" onclick="changeImage('./image/room.jpg')">EXECUTIVE ROOM</li>
+                        <li class="list-group-item" style="cursor: pointer;" onclick="changeImage('./image/room6.jpg')">PRESTIGE ROOM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+         <!-- Image Section -->
+         <div class="room-image col-md-6" style="border: 5px outset rgb(191, 160, 73);  box-shadow: 4px 4px 4px 4px #c8b98f;">
+          <img id="roomImage" src="./image/kankarwa2.jpg" alt="Room" class="img-fluid" style="width: 100%; height: 350px;" />
+      </div>
+    </div>
+</div></div>
+
+<!--================================================================ history ========================================== -->
+  <div class="container-fluid" id="history" style="margin-top: 80px;">
+    <div class="row">
+      <div class="col-md-6" style="padding: 30px; margin-top: 10px; margin-bottom: 80px;">
+        <h1 style="margin-bottom: 30px; color: #B8A980;"><b>HISTORY</b></h1>
+        <p>
+          <strong>
+            The family of Kankarwa Haveli is of the ruling class known as Rajput. 
+            They are descendants of the ruler of Mewar (Udaipur), 
+            having bifurcated from the royal family in the 16th century during the regime of Maharana Udai Singh, founder of Udaipur. 
+            They settled in and managed the Village of Kankarwa, 60 km from Udaipur, 
+            where they lived in a castle, their family home.<br><br>
+            The Kankarwa Fort northeast of Udaipur still stands as testimony to the family’s 
+            rich history. Early in the 19th century, the Maharana gave the Thakur of Kankarwa permission 
+            to build an urban house in Udaipur City. Construction began around 1820 and is presently known as Kankarwa Haveli.<br><br>
+            In 1993, the family began renovation work, and within two years, Kankarwa Haveli opened its doors to travelers, 
+            while remaining the city dwelling of the original family.
+          </strong>
+        </p>
+      </div>
+      <div class="col-md-6">
+        <div class="parent">
+          <div class="child">
+            <img src="./image/kankarwa4.jpg" alt="kankarwa" style="width: 300px; height: 200px;border: 5px outset rgb(191, 160, 73);">
+          </div>
+          <div class="child">
+            <img src="./image/kankarwa2.jpg" alt="kankarwa" style="width: 300px; height: 200px;border: 5px outset rgb(191, 160, 73);">
+          </div>
+          <div class="child">
+            <img src="./image/kankarwa1.jpg" alt="kankarwa" style="width: 300px; height: 200px;border: 5px outset rgb(191, 160, 73);">
+          </div>
+          <div class="child">
+            <img src="./image/kankarwa5.jpg" alt="kankarwa" style="width: 300px; height: 200px;border: 5px outset rgb(191, 160, 73);">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<!-- ==================================== facility ==================================== -->
+<div class="container-fluid" id="facility" style="margin-top: 80px;">
+  <div class="row">
+   
+    <div class="col-md-6">
+      <div class="parent">
+        <div class="child">
+          <img src="./image/room8.jpg" alt="kankarwa" style="width: 300px; height: 200px; border: 5px outset rgb(191, 160, 73);">
+        </div>
+        <div class="child">
+          <img src="./image/room2.jpg" alt="kankarwa" style="width: 300px; height: 200px; border: 5px outset rgb(191, 160, 73);">
+        </div>
+        <div class="child">
+          <img src="./image/room3.jpg" alt="kankarwa" style="width: 300px; height: 200px; border: 5px outset rgb(191, 160, 73);">
+        </div>
+        <div class="child">
+          <img src="./image/room5.jpg" alt="kankarwa" style="width: 300px; height: 200px; border: 5px outset rgb(191, 160, 73);">
+        </div>
+      </div>
+    </div>
+   
+    <div class="col-md-6" style="padding: 30px; margin-top: 10px; margin-bottom: 50px;">
+      <h1 style="margin-bottom: 10px; color: #B8A980;"><b>FACILITY</b></h1>
+      <p>
+        There is a secluded alcove with a jharokha on the first level with comfortable furniture, a place to enjoy the scenic beauty of the lake, meditate, read, relax, or converse in private. Just off the courtyard is another gathering place for Guest to meet, enjoy a drink and peruse the many magazines and current newspapers.
+          </p>
+          <strong>Internet(Wi-Fi)</strong>
+          <p>Behind Reception is a room fitted with computers where guest may use the Internet. There is also Internet access via Wi-fi in the haveli.</p>
+          <strong>Laundry service</strong>
+          <P>Laundry service is available in the morning and afternoon.<br></p>
+          <strong>Airport pickup/drop services</strong><p>
+          Reservations for tours or airport transfers with cars and drivers can be made with Janardan Singh.
+          </P>
+          <strong>Visa and Master Card are accepted</strong>
+    </div>
+  </div>
+</div>
+
+<!-- =============================== food ============================================ -->
+<div class="container-fluid" id="food" style="margin-top: 30px;">
+  <div class="row">
+    <div class="col-md-6" style="padding: 30px; margin-top: 10px; margin-bottom: 80px;">
+      <h1 style="margin-bottom: 30px ;color: #B8A980;"><b>FOOD</b></h1>
+      <p>The family kitchen is located on the roof where breakfast is served every morning between 7:30 AM and 11 AM.</p>
+        <p>A menu of Indian and continental food is available. This is a vegetarian house with eggs the only exception. A set menu is provided for clients whose breakfasts are included in their hotel plan. Lunch and dinner are available to haveli guests and outsiders at 1 PM to 2:30 PM and from 8 PM to 9 PM. Both are served ‘family style’ or in the ‘thali’ style, which consists of individual round tray containing ‘katoris’, small bowls of vegetables and dals, the center being left free for rice and Indian breads. The dinner has a choice of three kinds of thalis. The 'Food is prepared fresh' daily and no two sauces, gravies, or masalas are identical.</p>
+    <p>If you are lucky, you will find Thakurani Suchana kunwar, the charming lady of the house who is responsible for all the wonderful cooking, busy, but smiling in her kitchen. The family trusts you will find much enjoyment and pleasure at their table and a welcome change from the usual restaurant fare. Hot and cold beverages are available at all times. Room service is not available.</p>
+      </div>
+    <div class="col-md-6">
+      <div class="parent">
+        <div class="child">
+          <img src="./image/room7.jpg" alt="kankarwa" style="width: 300px; height: 200px; border: 5px outset rgb(191, 160, 73);">
+        </div>
+        <div class="child">
+          <img src="./image/room2.jpg" alt="kankarwa" style="width: 300px; height: 200px; border: 5px outset rgb(191, 160, 73);">
+        </div>
+        <div class="child">
+          <img src="./image/room3.jpg" alt="kankarwa" style="width: 300px; height: 200px; border: 5px outset rgb(191, 160, 73);">
+        </div>
+        <div class="child">
+          <img src="./image/room5.jpg" alt="kankarwa" style="width: 300px; height: 200px; border: 5px outset rgb(191, 160, 73);">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================ travel ========================================= -->
+<div class="container-fluid" id="travel" style="margin-top: 80px;">
+  <div class="row">
+   
+    <div class="col-md-6">
+      <div class="parent">
+        <div class="child">
+          <img src="./image/eklingli.jpg" alt="kankarwa" style="width: 300px; height: 200px; border: 5px outset rgb(191, 160, 73);">
+        </div>
+        <div class="child">
+          <img src="./image/ranakpur.jpg" alt="kankarwa" style="width: 300px; height: 200px; border: 5px outset rgb(191, 160, 73);">
+        </div>
+        <div class="child">
+          <img src="./image/Kumbhalgarh.webp" alt="kankarwa" style="width: 300px; height: 200px; border: 5px outset rgb(191, 160, 73);">
+        </div>
+        <div class="child">
+          <img src="./image/fort.jpg" alt="kankarwa" style="width: 300px; height: 200px; border: 5px outset rgb(191, 160, 73);">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6" style="padding: 30px; margin-top: 10px; margin-bottom: 80px;">
+      <h1 style="margin-bottom: 10px; color: #B8A980;"><b>TRAVEL DESK</b></h1>
+      <p>Reservations for tours or transfers with cars and drivers can be made with us. We offer services for your convenience, safety and comfort. We provide cars in spotless condition, continuous maintenance, and insurance. Our drivers are licensed. experienced, trustworthy, well-groomed and polite. We also provide transfers to airport, railway and bus terminals.</p>
+         <h6> <strong>Tours and Excursion</strong></h6>
+          <strong>Half day Excursions:</strong>
+          <p>City Sightseeing Eklingji and Nagda Temples</p>
+          <strong>Full day Excursions:</strong>
+          <p>Ranakpur Temples Kumbhalgarh Fort Chittorgarh Fort </p>
+          <strong>Full day Tours and Journeys:</strong>
+          <p>Jodhpur, Ajmer, Jaipur, Pushkar, Bundi, Ahmedabad & others Cities. We can also arrange bus, railway and flight tickets</p>
+             </div>
+  </div>
+</div>
+
+<!-- ==========================================================location =========================================== -->
+  <div class="container-fluid" id="location" style="border: 5px outset #c8b98f; padding: 20px; box-shadow: 10px 10px 10px 10px #c8b98f;margin-top: 120px; margin: 15px; margin-bottom: 50px; width: 95%;">
+    <div class="row">
+        <div class="col-md-5 location-info">
+            <h1 style="color: #B8A980;"><b>LOCATION</b></h1>
+            <p><strong>
+                Kankarwa Haveli has a prime location in the heart of the old City, at Lal Ghat. This is directly on the shore of Lake Pichola where the water caresses the windows and western facade. A five-minute walk will take you to the City Palace. Only a short distance in another direction is the famous Jagdish Temple.
+                Boats for hire and shops of every description are available just outside the haveli doors.
+                <br>From Udaipur airport it is a 35-minute (25-kilometer) drive into the city. Railway and bus stations are easily accessible via Autorikshaw at only a 10-minute distance (4 kilometers).
+              </strong> </p>
+        </div>
+        <div class="col-md-7">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.3027373324007!2d73.67989937481765!3d24.578746256473472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967ef878151b84b%3A0x65f47636409e06c!2sKankarwa%20Haveli!5e0!3m2!1sen!2sin!4v1736236595429!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+    </div>
+</div>
+<!-- ==========================================================  --attrection-- ======================================================== -->
+ <div class="container-fluid mt-3"  id="ATTRACTION" style="padding-top: 50px; margin-bottom: 40px; ">
+   <div class="row" style="padding: 5px;">
+     <h1 style="color: #B8A980; display: flex; align-items: center; justify-content: center; "><b>ATTRACTION</b></h1>
+     <div class="col-md-6">
+    <div style="padding: 8px; box-shadow: 10px 10px 10px 10px #c8b98f; margin: 12px;">
+      <img src="./image/palace.jpg" alt="Avatar" class="image" style="height: 300px; width: 98%; border: 6px outset #b7a268;" />
+      <div style="padding: 10px;">
+      <h1>UDAIPUR PALACE</h1>
+      <p>The most impressive attraction in Udaipur is the magnificent City Palace which is now a museum and houses fine art works in glass mosaics,
+         and miniature paintings, of which Udaipur is famous, depicting glories of an ancient past. Just down from the City Palace
+          is a boat landing where you can take a ride around Lake Pichola with an interesting stop at the Jag mandir Palace. Here you may enjoy a lovely cup of cappuccino while sitting in the garden or have lunch in the restaurant.
+         You may also wish to make a dinner reservation here and watch the sunset over the water or the play of colors on the buildings on the mainland.</p>
+    </div>
+  </div>
+</div>
+<div class="col-md-6">
+<div  style="padding: 10px; box-shadow: 10px 10px 10px 10px #c8b98f; margin: 12px;">
+ <img src="./image/eklingli.jpg" alt="Avatar" class="image" style="height: 300px; width: 98%; border:6px outset #b7a268;" />
+ <br>
+ <div style="padding: 15px;">
+ <h1>EKLING JI</h1>
+ <p style="padding: 15px;">Eklingji (22 KM) Timing hrs 0415-0645,1030-1330,1715-1945 Eklingji is a temple complex of 108 small temples of 8 th century. The main temple
+    of Shiva has four headed sculpture in black stone Nagda (23 km) 
+   Timing 0800-1800 hrs Nagda was first capital of Mewar kingdom and now left with ruins of temple known as Saas-bahu temple dated 10 th century.</p>
+</div></div>
+</div>
+     <div class="col-md-6">
+    <div  style="padding: 10px; box-shadow: 10px 10px 10px 10px #c8b98f; margin: 15px;">
+      <img src="./image/udaipur.jpg" alt="Avatar" class="image" style="height: 300px; width: 98%; border: 6px outset #b7a268;" />
+      <br>
+      <div style="padding: 15px;">
+     <h1>JAGDISH TEMPLE</h1>
+     <p style="padding: 10px;">The Jagdish Temple is a great focal point for the Hindu people of Udaipur.
+      The temple is dedicated to Vishnu, and is just a two minute walk up the street from Kankarwa Haveli.</p>
+    </div></div>
+     </div>
+    <div class="col-md-6">
+          <div  style="padding: 10px; box-shadow: 10px 10px 10px 10px #c8b98f; margin: 15px;">
+      <img src="./image/ranakpur.jpg" alt="Avatar" class="image" style="height: 300px; width: 98%; border: 6px outset #b7a268;" />
+      <br> <div style="padding: 12px;"></div>
+     <h1>RANAKPUR</h1>
+     <p>Ranakpur (88 km) timing 1100-1700hrs It is small temple complex on Udaipur to jodhpur route via Sadri.
+       Ranakpur is widely known for its white marble Jain temple dated 14 th century and much older Sun temple in the big complex.</p>
+    </div> <div style="padding: 10px;"></div>
+   </div>
+ </div>
+<!--================================================== Reservation Form Section ========================================-->
+<div class="reservation-form-container" id="form"  style="box-shadow: 10px 10px 10px 10px #c8b98f; margin: 10px; margin-top: 130px; width: 95%;padding: auto; padding-bottom: 60px;">
+    <h1 style="display: flex; align-items: center; justify-content: center; text-align: center;color: #B8A980; margin-top: 30px; padding-top:20px ;"><b>RESERVATION</b></h1>
+    <form id="reservation-form" style="padding: 20px;">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="user_name">Name*:</label>
+                    <input type="text" id="user_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address*:</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Country*:</label>
+                    <input type="text" id="country" required>
+                </div>
+                <div class="form-group">
+                    <label for="user_email">Email*:</label>
+                    <input type="email" id="user_email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile No:</label>
+                    <input type="tel" id="mobile">
+                </div>
+                <div class="form-group">
+                    <label for="messages">Special Request:</label>
+                    <textarea id="messages"></textarea>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="checkInDate">Check-In Date:</label>
+                    <input type="date" id="checkInDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkOutDate">Check-Out Date:</label>
+                    <input type="date" id="checkOutDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="adults">No. of Adults:</label>
+                    <select id="adults" required>
+                        <option value="">Select</option>
+                       
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="children">No. of Children:</label>
+                    <select id="children">
+                        <option value="">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+
+                <!-- Room Selections -->
+                <div class="form-group">
+                    <label for="deluxeSuite">Deluxe Lake Front Suite:</label>
+                    <select id="deluxeSuite">
+                        <option value="">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="deluxeRooms">Deluxe Lake Front Rooms:</label>
+                    <select id="deluxeRooms">
+                        <option value="">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="partialLakeRooms">Partial Lake View Rooms:</label>
+                    <select id="partialLakeRooms">
+                        <option value="">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-buttons d-flex justify-content-center text-align-center" >
+            <button type="submit" class="submit-btn" style="margin: 5px;">SUBMIT</button>
+            <button type="reset" class="reset-btn">RESET</button>
+        </div>
+    </form>
+</div>
+</div>
+<!-- =======================================================  -- Terms and Conditions -- =========================================-->
+<div class="content" id="term" style="margin-top: 80px; margin: 5px; box-shadow: 10px 10px 10px 10px #c8b98f; margin-bottom: 100px;">
+  <h1 style="color: #B8A980;"><b>TERMS AND CONDITIONS</b></h1>
+  <h3 style="color: #B8A980;"><b>CANCELLATION POLICY</b></h3>
+  <strong>
+      <p>In the event of a cancellation, the following policies will apply. If a booking is cancelled 07 days before arrival date / Failure to arrive at our hotel will be treated as no-show and no refund will be given. During blackout periods, no refunds will be issued for cancellations made at any time.</p>
+  </strong>
+  
+  <h3 style="color: #B8A980;"><b>REFUND POLICY</b></h3>
+  <strong>
+      <p>All refunds will be processed within 14 working days.</p>
+  </strong>
+  
+  <h3 style="color: #B8A980;"><b>TERMS AND CONDITIONS</b></h3>
+  <strong>
+      <p>We kindly request that our guests observe the following:</p>
+      <p>Check-in time is 12 noon, and check-out time is 10 am. As per government directives, valid ID proof with address, passport, and visa/OCI/POI is mandatory for check-in. The hotel reserves the right to refuse entry if these documents are not provided.</p>
+      <p>Any newly implemented or revised government taxes will be charged extra on the check-in date. Parties and gatherings of any kind are strictly prohibited on hotel premises. Outside food is not allowed in guest rooms, and guests are not permitted to order food from outside the hotel.</p>
+      <p>Parents are responsible for supervising children at all times. All rooms are designated as non-smoking areas. Smoking is only permitted in designated areas. To accommodate guests who are traveling with elderly individuals, we kindly request that they contact our hotel management to request accommodations on a lower floor.</p>
+      <p>Kankarwa Haveli stipulates that guests' visitors are required to meet them in designated areas such as the lobby, library, or courtyard, and are strictly prohibited from entering guest rooms. The hotel retains the right to expel any additional occupants found in the room. Furthermore, guests are expected to maintain the hotel's assets and valuables and will be held accountable for any damages incurred during their stay.</p>
+      <p>These terms and conditions are subject to change at any time without prior notice. Revised terms and conditions will be posted immediately.</p>
+  </strong>
+  
+  <h3 style="color: #B8A980;"><b>PRIVACY POLICY</b></h3>
+  <strong>
+      <p>This privacy policy governs the manner in which Kankarwa Haveli collects, uses, maintains, and discloses information collected from users. We may collect personal identification information from users in a variety of ways, including but not limited to when users visit our site, register on the site, and in connection with other activities, services, features, or resources we make available.</p>
+      <p>We do not sell, trade, or rent users' personal identification information to others. Kankarwa Haveli has the discretion to update this privacy policy at any time. By using this site, you signify your acceptance of this policy. If you do not agree to this policy, please do not use our site.</p>
+  </strong>
+</div>
+
+<!-- ======================================== footer ======================================================== -->
+  <div class="container-fluid container-fluid-12 " style="margin-top: 110px; ">
+        <div class="row">
+            <!-- Contact Information -->
+            <div class="col-md-4">
+                <h1>CONTACT US</h1>
+                <p><b>Kankarwa Haveli - 26 Lal Ghat, Udaipur, Rajasthan -313001 INDIA</b></p>
+                <p><b>Reception / Front desk:</b> +91 9929199930</p>
+                <p><b>Reservation Inquery:</b> +91 9929199929</p>
+                <p><b>Land line</b></p>
+                <p><b>Dialing from other Countries:</b></p>
+                <p>Tel +91-294-2411457</p>
+                <p><b>Dialing from India:</b></p>
+                <p>Tel 0294-2411457</p>
+                <p>Person contact (8 AM till 10 PM):</p>
+                <p><b>Mr. Janardan Singh:</b> +91 9929199927</p>
+                <p><b>Mr. Divyarishi Ranawat:</b> +91 9782950000</p>
+                <p><b>E-mail:</b></p>
+                <p>info@kankarwahaveli.com</p>
+                <p>kankarwahaveli@hotmail.com</p>
+                <p>kankarwahaveli@gmail.com</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4">
+                <h1>Quick Links (Navigation)</h1>
+                <ul class="navbar-ul">
+                  <li class="navbar-item">
+                      <a href="#home" class="NavLink" 
+                      >
+                          <i class="fas fa-home menu-icon"></i>
+                          <span class="menu-text">HOME</span>
+                      </a>
+                  </li>
+                  <li class="navbar-item">
+                    <a href="#Accommodations " class="NavLink" 
+                    >
+                      <i class="fas fa-hotel menu-icon"></i>
+    
+                        <span class="menu-text">ACCOMMODATIONS</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                  <a href="#Dining & Drinks" class="NavLink" 
+                  >
+                  <i class="fas fa-coffee  menu-icon"></i>
+                      <span class="menu-text">DINING & DRINKS</span>
+                  </a>
+              </li>
+                  <li class="navbar-item">
+                      <a href="#history" class="NavLink" 
+                      >
+                          <i class="fas fa-book-open menu-icon"></i>
+                          <span class="menu-text">History of Kankarwa Haveli</span>
+                      </a>
+                  </li>
+                  <li class="navbar-item">
+                    <a href="#facility" class="NavLink" 
+                    >
+              
+                      <i class="fas fa-hamburger menu-icon  menu-icon"></i>
+    
+                        <span class="menu-text">FACILITY & FOOD</span>
+                    </a>
+                </li>
+                
+              <li class="navbar-item">
+                <a href="#travel" class="NavLink" 
+                >
+                    <i class="fas fa-book-open menu-icon"></i>
+                    <span class="menu-text">TRAVEL DESK</span>
+                </a>
+            </li>
+                  <li class="navbar-item">
+                      <a href="#term" class="NavLink" 
+                      >
+                          <i class="fas fa-snowflake menu-icon"></i>
+                          <span class="menu-text">TERMS AND CONDITIONS</span>
+                      </a>
+                  </li>
+                  
+                  <li class="navbar-item">
+                      <a href="#location" class="NavLink" 
+                      >
+                          <i class="fas fa-map-marker-alt menu-icon"></i>
+                          <span class="menu-text">LOCATION</span>
+                      </a>
+                  </li>
+                  <li class="navbar-item">
+                    <a href="#ATTRACTION" class="NavLink" 
+                    >
+                    <i class="fas fa-magnet menu-icon"></i>
+                        <span class="menu-text">ATTRACTION</span>
+                    </a>
+                </li>
+                  <li class="navbar-item">
+                      <a href="#form" class="NavLink" 
+                      >
+                          <i class="fas fa-user-alt menu-icon"></i>
+                          <span class="menu-text">RESERVATION</span>
+                      </a>
+                  </li>
+              </ul>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="col-md-4">
+                <h1>Social Media Links</h1>
+               
+                <ul class="social-media-links">
+                  <li>
+                      <a href="https://www.instagram.com/" target="_blank">
+                          <i class="fab fa-instagram" style="color: purple; font-size: 30px; background: white; border-radius: 4px;"></i><br>
+                          Instagram
+                      </a>
+                  </li>
+                  <br>
+                  <li>
+                      <a href="https://www.facebook.com/" target="_blank">
+                          <i class="fab fa-facebook-square" style="color: blue; font-size: 30px; background: white; border-radius: 4px;"></i><br>
+                          Facebook
+                      </a>
+                  </li>
+                  <br>
+                  <li>
+                      <a href="https://wa.me/9929199929" target="_blank">
+                          <i class="fab fa-whatsapp" style="color: green; font-size: 30px; background: white; border-radius: 50px;"></i><br>
+                          WhatsApp
+                      </a>
+                  </li>
+              </ul>
+            </div>
+        </div>
+
+      
+        
+  </div>
+    <!-- Link to FontAwesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js">  
+    </script> 
+  </body>
+</html>
